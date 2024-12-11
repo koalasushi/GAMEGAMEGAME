@@ -30,5 +30,12 @@ public class Character : MonoBehaviour
 
         moveVelocity.y -= gravity * Time.deltaTime;
         characterController.Move(moveVelocity * Time.deltaTime);
+
+        if(hInput > 0){
+            gameObject.transform.localEulerAngles = new Vector3(0, 180, 0);
+        }
+        else if(hInput < 0){
+            gameObject.transform.localEulerAngles = new Vector3(0, 0, 0);
+        }
     }
 }
